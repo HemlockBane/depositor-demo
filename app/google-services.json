@@ -1,0 +1,187 @@
+{
+  "project_info": {
+    "project_number": "1020451303302",
+    "firebase_url": "https://bank-demo-d9f9e.firebaseio.com",
+    "project_id": "bank-demo-d9f9e",
+    "storage_bucket": "bank-demo-d9f9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020451303302:android:d37b04a2c4b3ac6f",
+        "android_client_info": {
+          "package_name": "com.example.android.depositor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020451303302-i8csksp5bs05pvmaotpa9418scjjbkji.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.depositor",
+            "certificate_hash": "ba8578cec451b4afede85bafceedfdbd9580e3a7"
+          }
+        },
+        {
+          "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL8l5cbeua3kkExl32OZOX81wvQmvglJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020451303302:android:b676e2af07b9fd46",
+        "android_client_info": {
+          "package_name": "com.example.polymath.cashierdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020451303302-nl54qb0h91qs38n6dn26p38ms1bn1tt8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.polymath.cashierdemo",
+            "certificate_hash": "ba8578cec451b4afede85bafceedfdbd9580e3a7"
+          }
+        },
+        {
+          "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL8l5cbeua3kkExl32OZOX81wvQmvglJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020451303302:android:c916489cee730b55",
+        "android_client_info": {
+          "package_name": "com.example.polymath.depositdemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020451303302-mu89bui8bcif9aourvb3od0vd85c1ua7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.polymath.depositdemo",
+            "certificate_hash": "e38ac64896d19ea15bf55e195dfebe6d6dc3b2d6"
+          }
+        },
+        {
+          "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL8l5cbeua3kkExl32OZOX81wvQmvglJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020451303302:android:e44f25d2318da1eb",
+        "android_client_info": {
+          "package_name": "com.example.polymath.depositor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020451303302-r7sgt6dfu0ktk0ba58uaq3n88m7d1shi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.polymath.depositor",
+            "certificate_hash": "ba8578cec451b4afede85bafceedfdbd9580e3a7"
+          }
+        },
+        {
+          "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL8l5cbeua3kkExl32OZOX81wvQmvglJ4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020451303302-bgcgae29prorm421gf5prbrpm00p2g70.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

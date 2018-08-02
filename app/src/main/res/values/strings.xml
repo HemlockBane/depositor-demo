@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Depositor</string>
+    <string name="title_activity_deposit">DepositActivity</string>
+</resources>
