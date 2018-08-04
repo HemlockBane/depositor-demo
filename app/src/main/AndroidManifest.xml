@@ -19,6 +19,10 @@
         <activity
             android:name=".DepositActivity"
             android:label="@string/title_activity_deposit"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".PostActivity"
+            android:label="@string/title_activity_post"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

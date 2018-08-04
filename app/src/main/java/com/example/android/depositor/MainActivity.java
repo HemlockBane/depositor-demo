@@ -1,5 +1,6 @@
 package com.example.android.depositor;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.android.depositor.models.AccountDetails;
 import com.google.firebase.database.ChildEventListener;
@@ -29,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
     EditText accountNumberEdit;
     Button acctNumberCheckButton;
+
+    String name;
+    String number;
     String accountNumber;
 
     @Override
@@ -57,13 +62,18 @@ public class MainActivity extends AppCompatActivity {
                         public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                             if (dataSnapshot.exists()){
                                 AccountDetails accountDetails = dataSnapshot.getValue(AccountDetails.class);
-                                String name = accountDetails.getAccountName();
-                                String number = accountDetails.getAccountNumber();
+                                name = accountDetails.getAccountName();
+                                number = accountDetails.getAccountNumber();
 
                                 Log.e(TAG, "Account Name is  " + name);
                                 Log.e(TAG, "Account Number  " + number);
 
+                                Intent intent = new Intent(MainActivity.this, DepositActivity.class);
+                                intent.putExtra("accountNumber", accountNumber);
+                                startActivity(intent);
+
                             }else{
+                                Toast.makeText(MainActivity.this, "Account does not exist", Toast.LENGTH_SHORT );
 
 
 
@@ -97,29 +107,13 @@ public class MainActivity extends AppCompatActivity {
                     accountQuery.addChildEventListener(mChildEventListener);
 
 
-//                mDatabaseReference.orderByChild("accountNumber").equalTo(accountNum)
+//                mDatabaseReference.orderByChild("passedAccountNumber").equalTo(accountNum)
                 }
 
 
 
             }
         });
-
-
-
-
-
-//        public void validateAccountNumber(/*Pass in EditText*/){
-//            if (!isValidAccount(/*Pass in EditText*/)){
-//                account.setError("Please, enter a valid account");
-//            }else{
-//                //check if account exists in database
-//            }
-//        }
-//        public boolean isValidAccount(EditText text){
-//            CharSequence string = text.getText.toString();
-//            return(!TextUtils.isEmpty(string) && string.length() == 10);
-//        }
 
 
 

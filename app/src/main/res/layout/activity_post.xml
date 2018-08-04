@@ -1,33 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android=
+    "http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".PostActivity">
+    android:layout_height="match_parent">
 
-    <android.support.design.widget.AppBarLayout
+    <LinearLayout
+        android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <TextView
+            android:id="@+id/account_name_details"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="22sp"
+            tools:text="Details" />
 
-    </android.support.design.widget.AppBarLayout>
+        <TextView
+            android:id="@+id/account_number_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="22sp"
+            tools:text="Details" />
 
-    <include layout="@layout/content_post" />
+        <TextView
+            android:id="@+id/deposit_amount_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="22sp"
+            tools:text="Details" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+        <TextView
+            android:id="@+id/depositor_name_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="22sp"
+            tools:text="Details" />
+
+        <TextView
+            android:id="@+id/depositor_phone_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="22sp"
+            tools:text="Details" />
+
+        <TextView
+            android:id="@+id/depositor_email_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:textSize="22sp"
+            tools:text="Details" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/post_button_details"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="12dp"
+        android:text="Post" />
 
-</android.support.design.widget.CoordinatorLayout>
+    <Button
+        android:id="@+id/edit_button_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/post_button_details"
+        android:layout_marginStart="19dp"
+        android:text="Edit" />
+</RelativeLayout>
