@@ -68,15 +68,12 @@ public class MainActivity extends AppCompatActivity {
                                 Log.e(TAG, "Account Name is  " + name);
                                 Log.e(TAG, "Account Number  " + number);
 
-                                Intent intent = new Intent(MainActivity.this, DepositActivity.class);
+                                Intent intent = new Intent(MainActivity.this, DetailsActivity.class);
                                 intent.putExtra("accountNumber", accountNumber);
                                 startActivity(intent);
 
                             }else{
                                 Toast.makeText(MainActivity.this, "Account does not exist", Toast.LENGTH_SHORT );
-
-
-
                             }
 
 

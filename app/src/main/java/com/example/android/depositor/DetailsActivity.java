@@ -1,14 +1,15 @@
 package com.example.android.depositor;
 
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,9 +21,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 
-public class DepositActivity extends AppCompatActivity {
-    public final String TAG = DepositActivity.class.getSimpleName();
+public class DetailsActivity extends AppCompatActivity {
 
+    public final String TAG = DetailsActivity.class.getSimpleName();
     private FirebaseDatabase mDatabase;
     private DatabaseReference mDatabaseReference;
     private ChildEventListener mChildEventListener;
@@ -35,6 +36,7 @@ public class DepositActivity extends AppCompatActivity {
     private EditText depositorPhoneEdit;
     private EditText depositorEmailEdit;
     private Button nextButton;
+    private ImageView chevronright;
 
     String passedAccountNumber;
     String accountName;
@@ -47,7 +49,7 @@ public class DepositActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deposit);
+        setContentView(R.layout.activity_details);
 
         accountNameText = findViewById(R.id.account_name_text);
         accountNumberText = findViewById(R.id.account_number_text);
@@ -55,7 +57,8 @@ public class DepositActivity extends AppCompatActivity {
         depositorNameEdit = findViewById(R.id.depositor_name_edit);
         depositorPhoneEdit = findViewById(R.id.deposit_phone_edit);
         depositorEmailEdit = findViewById(R.id.deposit_email_edit);
-        nextButton = findViewById(R.id.next_button);
+//        nextButton = findViewById(R.id.next_button);
+        chevronright = findViewById(R.id.right_button);
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("accounts");
 
@@ -70,53 +73,53 @@ public class DepositActivity extends AppCompatActivity {
         accountQuery = mDatabaseReference.orderByChild("accountNumber").equalTo(passedAccountNumber);
 
         mChildEventListener = new ChildEventListener() {
-                        @Override
-                        public void onChildAdded(DataSnapshot dataSnapshot, String s) {
-                            if (dataSnapshot.exists()){
-                                //pass snapshot to class for deserialization
-                                AccountDetails accountDetails = dataSnapshot.getValue(AccountDetails.class);
-                                accountName = accountDetails.getAccountName();
-                                accountNumber = accountDetails.getAccountNumber();
-                                //Set account name and number TextViews account name and number
-                                accountNameText.setText(accountName);
-                                accountNumberText.setText(accountNumber);
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                if (dataSnapshot.exists()){
+                    //pass snapshot to class for deserialization
+                    AccountDetails accountDetails = dataSnapshot.getValue(AccountDetails.class);
+                    accountName = accountDetails.getAccountName();
+                    accountNumber = accountDetails.getAccountNumber();
+                    //Set account name and number TextViews account name and number
+                    accountNameText.setText(accountName);
+                    accountNumberText.setText(accountNumber);
 
-                                Log.e(TAG, "accountName: " + accountName);
-                                Log.e(TAG, "accountNumber: " + accountNumber);
+                    Log.e(TAG, "accountName: " + accountName);
+                    Log.e(TAG, "accountNumber: " + accountNumber);
 
-                            }
+                }
 
 
-                        }
+            }
 
-                        @Override
-                        public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
 
-                        }
+            }
 
-                        @Override
-                        public void onChildRemoved(DataSnapshot dataSnapshot) {
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
 
-                        }
+            }
 
-                        @Override
-                        public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
 
-                        }
+            }
 
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-                            
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
 
-                        }
-                    };
+
+            }
+        };
         accountQuery.addChildEventListener(mChildEventListener);
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        chevronright.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //if data entries are invalid, print toast. Else, pass details to next activity
                 if(!validateEntries()){
-                    Toast.makeText(DepositActivity.this, "Please, fill the required fields", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DetailsActivity.this, "Please, fill the required fields", Toast.LENGTH_SHORT).show();
 
                 }else{
                     Log.e(TAG, "accountName: " + accountName);
@@ -135,7 +138,7 @@ public class DepositActivity extends AppCompatActivity {
                     Log.e(TAG, "depositorEmail: " + depositorEmail);
 
 
-                    Intent intent = new Intent(DepositActivity.this, PostActivity.class);
+                    Intent intent = new Intent(DetailsActivity.this, PostActivity.class);
                     intent.putExtra("accountName", accountName);
                     intent.putExtra("accountNumber", accountNumber);
                     intent.putExtra("depositAmount", depositAmount);
@@ -143,17 +146,11 @@ public class DepositActivity extends AppCompatActivity {
                     intent.putExtra("depositorPhone", depositorPhone);
                     intent.putExtra("depositorEmail", depositorEmail);
                     startActivity(intent);
-
-
-
-
                 }
             }
         });
 
 
-
-        
     }
 
     private boolean validateEntries(){
@@ -200,5 +197,4 @@ public class DepositActivity extends AppCompatActivity {
         CharSequence string = text.getText().toString();
         return TextUtils.isEmpty(string);
     }
-
 }

@@ -2,31 +2,42 @@ package com.example.android.depositor.models;
 
 public class Payment {
 
-    public String accountName;
-    public String accountNumber;
-    public String depositAmount;
-    public String depositorName;
-    public String depositorPhoneNumber;
-    public String depositorEmail;
+    private String pushID;
+    private String accountName;
+    private String accountNumber;
+    private String depositAmount;
+    private String depositorName;
+    private String depositorPhoneNumber;
+    private String depositorEmail;
 
     public Payment(){
 
     }
 
-    public Payment(String accountName, String accountNumber, String depositAmount, String depositorName, String depositorPhoneNumber){
+    public Payment(String pushID, String accountName, String accountNumber, String depositAmount, String depositorName, String depositorPhoneNumber){
+        this.pushID = pushID;
         this.accountName = accountName;
         this.accountNumber = accountNumber;
         this.depositAmount = depositAmount;
         this.depositorName = depositorName;
         this.depositorPhoneNumber = depositorPhoneNumber;
     }
-    public Payment(String accountName, String accountNumber, String depositAmount, String depositorName, String depositorPhoneNumber, String depositorEmail){
+    public Payment(String pushID, String accountName, String accountNumber, String depositAmount, String depositorName, String depositorPhoneNumber, String depositorEmail){
+        this.pushID = pushID;
         this.accountName = accountName;
         this.accountNumber = accountNumber;
         this.depositAmount = depositAmount;
         this.depositorName = depositorName;
         this.depositorPhoneNumber = depositorPhoneNumber;
         this.depositorEmail = depositorEmail;
+    }
+
+    public String getPushID() {
+        return pushID;
+    }
+
+    public void setPushID(String pushID) {
+        this.pushID = pushID;
     }
 
     public String getAccountName() {

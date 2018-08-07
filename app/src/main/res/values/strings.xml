@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Depositor</string>
-    <string name="title_activity_deposit">DepositActivity</string>
-    <string name="title_activity_post">PostActivity</string>
+    <string name="title_activity_deposit">Details</string>
+    <string name="title_activity_post">Post</string>
+    <string name="enter_button">Enter</string>
+    <string name="account_number_hint">0136787787</string>
+    <string name="title_details_activity">Deposit Details</string>
 </resources>

@@ -17,13 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DepositActivity"
-            android:label="@string/title_activity_deposit"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".PostActivity"
             android:label="@string/title_activity_post"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:parentActivityName=".DetailsActivity" />
+        <activity
+            android:name=".DetailsActivity"
+            android:label="@string/title_details_activity"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

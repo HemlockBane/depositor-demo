@@ -11,23 +11,44 @@
         android:id="@+id/account_number_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="207dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginLeft="35dp"
         android:ems="10"
+        android:hint="@string/account_number_hint"
         android:inputType="number"
-        android:hint="013-678-7787"
         android:textAlignment="center"
-        android:textSize="24sp"
-        android:layout_margin="16dp"/>
+        android:textSize="26sp" />
 
     <Button
         android:id="@+id/account_number_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_buttons"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="166dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginStart="45dp"
+        android:text="@string/enter_button"
+        android:textSize="22sp"
+        android:textColor="#ffffff"/>
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="13dp"
-        android:text="Check" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="92dp"
+        android:text="Depositor"
+        android:textAlignment="textEnd"
+        android:textColor="#005662"
+        android:fontFamily="Roboto"
+        android:textSize="50sp"/>
+
 
 
 </RelativeLayout>

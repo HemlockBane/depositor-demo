@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,12 +16,14 @@ import com.example.android.depositor.models.Payment;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class PostActivity extends AppCompatActivity {
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabaseReference;
+    private DatabaseReference mSubDatabaseReference;
     private ChildEventListener mChildEventListener;
 
 
@@ -32,9 +35,10 @@ public class PostActivity extends AppCompatActivity {
     private TextView depositorNameText;
     private TextView depositorPhoneNumberText;
     private TextView depositorEmailText;
-    private Button postPaymentButton;
-    private Button editPaymentButton;
+    private ImageView postPaymentButton;
+    private ImageView editPaymentButton;
 
+    String pushID;
     String accountName;
     String accountNumber;
     String depositAmount;
@@ -91,17 +95,22 @@ public class PostActivity extends AppCompatActivity {
         postPaymentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Payment post = new Payment(accountName,
+                mSubDatabaseReference = mDatabaseReference.push();
+                pushID = mSubDatabaseReference.getKey();
+                Payment post = new Payment(pushID,
+                        accountName,
                         accountNumber,
                         depositAmount,
                         depositorName,
                         depositorPhoneNumber,
                         depositorEmail);
-                mDatabaseReference.child("depositQueue").push().setValue(post)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                mSubDatabaseReference.child("depositQueue").setValue(post)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
                                 // Write was successful!
+
                                 Toast.makeText(PostActivity.this, "Payment is successful", Toast.LENGTH_SHORT).show();
                             }
                         })
@@ -113,12 +122,38 @@ public class PostActivity extends AppCompatActivity {
                             }
                         });
 
+
+
+//                mDatabaseReference.child("depositQueue").push().setValue(post, new DatabaseReference.CompletionListener() {
+//                    @Override
+//                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+//                        String depositUniqueKey = databaseReference.getKey();
+//                        Log.e(TAG, "Push key: " + depositUniqueKey);
+//                    }
+//                });
+//                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+//                            @Override
+//                            public void onSuccess(Void aVoid) {
+//                                // Write was successful!
+//
+//                                Toast.makeText(PostActivity.this, "Payment is successful", Toast.LENGTH_SHORT).show();
+//                            }
+//                        })
+//                        .addOnFailureListener(new OnFailureListener() {
+//                            @Override
+//                            public void onFailure(@NonNull Exception e) {
+//                                // Write failed
+//                                Toast.makeText(PostActivity.this, "Payment failed", Toast.LENGTH_SHORT).show();
+//                            }
+//                        });
+
             }
         });
 
         editPaymentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(PostActivity.this, DetailsActivity.class);
 
 
             }
