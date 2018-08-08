@@ -1,6 +1,7 @@
 package com.example.android.depositor;
 
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -36,7 +37,7 @@ public class DetailsActivity extends AppCompatActivity {
     private EditText depositorPhoneEdit;
     private EditText depositorEmailEdit;
     private Button nextButton;
-    private ImageView chevronright;
+    private FloatingActionButton fabRight;
 
     String passedAccountNumber;
     String accountName;
@@ -58,7 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
         depositorPhoneEdit = findViewById(R.id.deposit_phone_edit);
         depositorEmailEdit = findViewById(R.id.deposit_email_edit);
 //        nextButton = findViewById(R.id.next_button);
-        chevronright = findViewById(R.id.right_button);
+        fabRight = findViewById(R.id.right_button);
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference().child("accounts");
 
@@ -114,7 +115,7 @@ public class DetailsActivity extends AppCompatActivity {
             }
         };
         accountQuery.addChildEventListener(mChildEventListener);
-        chevronright.setOnClickListener(new View.OnClickListener() {
+        fabRight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //if data entries are invalid, print toast. Else, pass details to next activity

@@ -9,6 +9,8 @@
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
 
         <TextView
@@ -60,47 +62,25 @@
             tools:text="Details" />
     </LinearLayout>
 
-    <!--<Button-->
-        <!--android:id="@+id/post_button_details"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@drawable/rounded_buttons"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_alignParentEnd="true"-->
-        <!--android:layout_marginBottom="15dp"-->
-        <!--android:layout_marginEnd="19dp"-->
-        <!--android:text="Post"-->
-        <!--android:textAlignment="center"-->
-        <!--android:textColor="#fff"/>-->
 
-    <!--<Button-->
-        <!--android:id="@+id/edit_button_details"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:background="@drawable/rounded_buttons"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_alignTop="@+id/post_button_details"-->
-        <!--android:layout_marginStart="19dp"-->
-        <!--android:text="Edit"-->
-        <!--android:textAlignment="gravity"-->
-        <!--android:textColor="#fff"/>-->
-
-    <ImageView
+    <android.support.design.widget.FloatingActionButton
         android:id="@+id/post_button_details"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="34dp"
+        android:src="@drawable/ic_send_white_48dp"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/edit_button_details"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="17dp"
         android:layout_marginStart="34dp"
-        android:src="@drawable/ic_redo_black_48dp" />
+        android:src="@drawable/ic_create_white_48dp" />
 
-    <ImageView
-        android:id="@+id/edit_button_details"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/post_button_details"
-        android:layout_marginEnd="34dp"
-        android:src="@drawable/ic_send_black_48dp" />
 </RelativeLayout>
