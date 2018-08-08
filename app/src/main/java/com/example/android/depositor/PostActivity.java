@@ -95,7 +95,7 @@ public class PostActivity extends AppCompatActivity {
         postPaymentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSubDatabaseReference = mDatabaseReference.push();
+                mSubDatabaseReference = mDatabaseReference.child("depositQueue").push();
                 pushID = mSubDatabaseReference.getKey();
                 Payment post = new Payment(pushID,
                         accountName,
