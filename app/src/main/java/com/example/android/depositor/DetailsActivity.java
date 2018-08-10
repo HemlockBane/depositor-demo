@@ -119,24 +119,25 @@ public class DetailsActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //if data entries are invalid, print toast. Else, pass details to next activity
-                if(!validateEntries()){
+                if(!validEntries()){
                     Toast.makeText(DetailsActivity.this, "Please, fill the required fields", Toast.LENGTH_SHORT).show();
 
                 }else{
-                    Log.e(TAG, "accountName: " + accountName);
-                    Log.e(TAG, "accountNumber: " + accountNumber);
 
                     depositAmount = depositAmountEdit.getText().toString();
                     depositorName = depositorNameEdit.getText().toString();
                     depositorPhone = depositorPhoneEdit.getText().toString();
-                    depositorEmail = depositorEmailEdit.getText().toString();
 
-                    Log.e(TAG, "accountName: " + accountName);
-                    Log.e(TAG, "accountNumber: " + accountNumber);
-                    Log.e(TAG, "depositAmount: " + depositAmount);
-                    Log.e(TAG, "depositorName: " + depositorName);
-                    Log.e(TAG, "depositorPhone: " + depositorPhone);
-                    Log.e(TAG, "depositorEmail: " + depositorEmail);
+                    if (!isEmpty(depositorEmailEdit)){
+                        if (!validEmail(depositorEmailEdit)){
+                            depositorEmailEdit.setError("Please enter a valid email");
+                        }else{
+                            depositorEmail = depositorEmailEdit.getText().toString();
+
+                        }
+                    }else{
+                        depositorEmail = "-----------------------------";
+                    }
 
 
                     Intent intent = new Intent(DetailsActivity.this, PostActivity.class);
@@ -154,7 +155,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
-    private boolean validateEntries(){
+    private boolean validEntries(){
         boolean valid = true;
         if (isEmpty(depositAmountEdit)){
             depositAmountEdit.setError("Please, enter cash amount to deposit");
@@ -173,10 +174,6 @@ public class DetailsActivity extends AppCompatActivity {
 
         }
 
-        if (!validateOptionalEmail(depositorEmailEdit)){
-            depositorEmailEdit.setError("Please enter a valid email");
-            valid = false;
-        }
         return valid;
     }
 
@@ -187,7 +184,7 @@ public class DetailsActivity extends AppCompatActivity {
         return(!TextUtils.isEmpty(string) && string.length() == 11);
     }
 
-    private boolean validateOptionalEmail(EditText text){
+    private boolean validEmail(EditText text){
         CharSequence string = text.getText().toString();
         //check if email matches standard email pattern
         //should return true

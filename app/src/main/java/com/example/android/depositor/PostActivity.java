@@ -105,7 +105,7 @@ public class PostActivity extends AppCompatActivity {
                         depositorPhoneNumber,
                         depositorEmail);
 
-                mSubDatabaseReference.child("depositQueue").setValue(post)
+                mSubDatabaseReference.setValue(post)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -122,30 +122,8 @@ public class PostActivity extends AppCompatActivity {
                             }
                         });
 
-
-
-//                mDatabaseReference.child("depositQueue").push().setValue(post, new DatabaseReference.CompletionListener() {
-//                    @Override
-//                    public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
-//                        String depositUniqueKey = databaseReference.getKey();
-//                        Log.e(TAG, "Push key: " + depositUniqueKey);
-//                    }
-//                });
-//                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-//                            @Override
-//                            public void onSuccess(Void aVoid) {
-//                                // Write was successful!
-//
-//                                Toast.makeText(PostActivity.this, "Payment is successful", Toast.LENGTH_SHORT).show();
-//                            }
-//                        })
-//                        .addOnFailureListener(new OnFailureListener() {
-//                            @Override
-//                            public void onFailure(@NonNull Exception e) {
-//                                // Write failed
-//                                Toast.makeText(PostActivity.this, "Payment failed", Toast.LENGTH_SHORT).show();
-//                            }
-//                        });
+                Intent intent = new Intent(PostActivity.this, MainActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -154,6 +132,7 @@ public class PostActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PostActivity.this, DetailsActivity.class);
+                startActivity(intent);
 
 
             }
