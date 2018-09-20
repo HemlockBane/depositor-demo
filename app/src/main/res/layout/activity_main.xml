@@ -44,7 +44,8 @@
         android:layout_marginTop="148dp"
         android:fontFamily="Roboto"
         android:text="Account Number"
-        android:textColor="#000"
+        android:textColor="@color/colorPrimaryDark"
+        android:textAllCaps="true"
         android:textAlignment="textEnd"
         android:textSize="@dimen/text_size_home" />
 

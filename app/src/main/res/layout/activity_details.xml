@@ -19,7 +19,7 @@
             android:text="James Bond"
             android:textAlignment="center"
             android:textAllCaps="true"
-            android:textColor="#000"
+            android:textColor="@color/colorPrimaryDark"
             android:textSize="34sp"/>
 
         <TextView
