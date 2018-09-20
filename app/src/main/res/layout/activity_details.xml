@@ -81,7 +81,7 @@
         <!--android:textAlignment="center"-->
         <!--android:textColor="#ffffff"/>-->
 
-    <android.support.design.widget.FloatingActionButton
+    <Button
         android:id="@+id/right_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,8 +89,8 @@
         android:layout_alignParentEnd="true"
         android:layout_marginBottom="17dp"
         android:layout_marginEnd="34dp"
-        app:fabSize="auto"
-        android:src="@drawable/ic_chevron_right_white_48dp"/>
+        android:text="Enter"
+        android:textColor="@color/colorTitle"/>
 
     <!--<ImageView-->
         <!--android:id="@+id/right_button"-->
