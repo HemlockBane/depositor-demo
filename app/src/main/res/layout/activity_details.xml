@@ -83,6 +83,7 @@
 
     <Button
         android:id="@+id/right_button"
+        android:background="@drawable/rounded_buttons"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"

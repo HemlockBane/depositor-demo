@@ -123,6 +123,7 @@
 
     <Button
         android:id="@+id/post_button_details"
+        android:background="@drawable/rounded_buttons"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
@@ -134,6 +135,7 @@
 
     <Button
         android:id="@+id/edit_button_details"
+        android:background="@drawable/rounded_buttons"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
