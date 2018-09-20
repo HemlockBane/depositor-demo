@@ -54,12 +54,14 @@ public class MainActivity extends AppCompatActivity {
         accountNumberEdit = findViewById(R.id.account_number_edit);
         acctNumberCheckButton = findViewById(R.id.account_number_button);
 
+        // Check if user has typed any text
         accountNumberEdit.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
 
             }
-
+            // When the user is typing, if text is not zero,
+            // enable button.
             @Override
             public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
                 if (charSequence.toString().trim().length() > 0){
