@@ -111,14 +111,14 @@ public class PostActivity extends AppCompatActivity {
                             public void onSuccess(Void aVoid) {
                                 // Write was successful!
 
-                                Toast.makeText(PostActivity.this, "Payment is successful", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PostActivity.this, "Successfully added to queue", Toast.LENGTH_SHORT).show();
                             }
                         })
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
                                 // Write failed
-                                Toast.makeText(PostActivity.this, "Payment failed", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PostActivity.this, "Failed to add to queue", Toast.LENGTH_SHORT).show();
                             }
                         });
 

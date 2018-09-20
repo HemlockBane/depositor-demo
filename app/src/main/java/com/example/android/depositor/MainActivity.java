@@ -3,8 +3,11 @@ package com.example.android.depositor;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.util.TimeUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,6 +20,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+
+import java.util.concurrent.TimeUnit;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,6 +54,27 @@ public class MainActivity extends AppCompatActivity {
         accountNumberEdit = findViewById(R.id.account_number_edit);
         acctNumberCheckButton = findViewById(R.id.account_number_button);
 
+        accountNumberEdit.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+                if (charSequence.toString().trim().length() > 0){
+                    acctNumberCheckButton.setEnabled(true);
+                }else{
+                    acctNumberCheckButton.setEnabled(false);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         acctNumberCheckButton.setOnClickListener(new View.OnClickListener() {
             @Override
